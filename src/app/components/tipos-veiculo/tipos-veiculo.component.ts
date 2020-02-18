@@ -10,7 +10,6 @@ import { MarcaService } from "../../services/marca.service";
 })
 export class TiposVeiculoComponent implements OnInit {
 
-  displayedColumns: string[] = ["name", "fipe_name", "order", "key", "id"];
   dataSourceMarcas: Marcas[] = [];
   dataSourceVeiculos: any[] = [];
   dataSourceModelos: any[] = [];
@@ -18,13 +17,13 @@ export class TiposVeiculoComponent implements OnInit {
   selectedMarca: number;
   selectedVeiculo: number;
   selectedModelo: number;
-  dataResultado: Resultado;
+  dataSourceResultado: Resultado;
 
   constructor(private marcaService: MarcaService) { }
 
   ngOnInit() {
     this.tela = 1;
-    this.dataResultado = new Resultado();
+    this.dataSourceResultado = new Resultado();
   }
 
   listarTodasMarcas(tipoIndex: number) {
@@ -70,8 +69,8 @@ export class TiposVeiculoComponent implements OnInit {
     this.marcaService.setUrlResultadoFipe(this.selectedMarca, this.selectedVeiculo, this.selectedModelo);
     this.marcaService.getObj<Resultado>().subscribe(
       res => {
-        this.dataResultado = res;
-        console.log(this.dataResultado);
+        this.dataSourceResultado = res;
+        console.log(this.dataSourceResultado);
       },
       err => {
         console.log(err);

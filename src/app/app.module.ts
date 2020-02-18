@@ -10,6 +10,7 @@ import { MenuComponent } from "./components/menu/menu.component";
 import { MarcaService } from "./services/marca.service";
 import { TiposVeiculoComponent } from './components/tipos-veiculo/tipos-veiculo.component';
 import { HomeComponent } from './components/home/home.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 import { LayoutModule } from "@angular/cdk/layout";
 import {
@@ -30,7 +31,8 @@ import {
     AppComponent,
     MenuComponent,
     TiposVeiculoComponent,
-    HomeComponent
+    HomeComponent,
+    FooterComponent
   ],
 
   imports: [
