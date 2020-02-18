@@ -1,0 +1,125 @@
+<div class="row" [hidden]="tela != 1">
+  <div class="escolha">
+    <h4>Escolha abaixo o tipo de veículo</h4>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-4">
+      <mat-card class="example-card">
+        <mat-card-header>
+          <mat-card-title>Carros</mat-card-title>
+          <mat-card-subtitle>Utilitários, vans e esportivos</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image style="height: 200px;" src="../../assets/carros.jpg" />
+        <mat-card-content>
+          <p>
+            asdasdasdasdasdasdasdasdasdasdddas
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button (click)="setTipoveiculo(1)">Selecionar</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+
+    <div class="col-lg-4">
+      <mat-card class="example-card">
+        <mat-card-header>
+          <mat-card-title>Motocicletas</mat-card-title>
+          <mat-card-subtitle>Duas rodas</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image style="height: 200px;" src="../../assets/motos.jpg" />
+        <mat-card-content>
+          <p>
+            asdasdasdasdasdasdasdasdasdasdddasd
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button (click)="setTipoveiculo(2)">Selecionar</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+
+    <div class="col-lg-4">
+      <mat-card class="example-card">
+        <mat-card-header>
+          <mat-card-title>Caminhões</mat-card-title>
+          <mat-card-subtitle>Carretas, baús, trucks </mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image style="height: 200px;" src="../../assets/caminhoes.jpg" />
+        <mat-card-content>
+          <p>
+            asdasdasdasdasdasdasdasdasdasdddasd
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button (click)="setTipoveiculo(3)">Selecionar</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</div>
+
+<div [hidden]="tela != 2" class="container text-center my-5">
+  <mat-form-field>
+    <mat-label>Marca: </mat-label>
+    <select matNativeControl [(ngModel)]="selectedMarca" name="marca" (change)="listarTodoVeiculos()">
+      <option value="" selected></option>
+      <option *ngFor="let marca of dataSourceMarcas" [value]="marca.id">
+        {{ marca.name }}
+      </option>
+    </select>
+  </mat-form-field>
+
+  <p></p>
+  <mat-form-field>
+    <mat-label>Modelo: </mat-label>
+    <select matNativeControl [(ngModel)]="selectedVeiculo" name="veiculo" (change)="listarTodoModelos()">
+      <option value="" selected></option>
+      <option *ngFor="let veiculo of dataSourceVeiculos" [value]="veiculo.id">
+        {{ veiculo.name }}
+      </option>
+    </select>
+  </mat-form-field>
+
+  <p></p>
+  <mat-form-field>
+    <mat-label>Ano do Modelo: </mat-label>
+    <select matNativeControl [(ngModel)]="selectedModelo" name="modelo">
+      <option value="" selected></option>
+      <option *ngFor="let modelo of dataSourceModelos" [value]="modelo.id">
+        {{ modelo.name }}
+      </option>
+    </select>
+  </mat-form-field>
+
+  <p></p>
+  <button mat-button (click)="tela = 1" class="btn-voltar">Voltar</button>
+  <button mat-button (click)="tela = 3" class="btn-pesquisar" (click)="ObterResultadoTabelaFipe()">
+    Pesquisar
+  </button>
+</div>
+
+<div class="container" [hidden]="tela != 3">
+  
+  <mat-list>
+    <mat-list-item>Marca: {{ dataResultado.marca }}</mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item>Modelo: {{ dataResultado.veiculo }}</mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item>Ano do modelo: {{ dataResultado.ano_modelo }}</mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item>Combustível: {{ dataResultado.combustivel }}</mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item>Referência: {{ dataResultado.referencia }}</mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item>Código Fipe: {{ dataResultado.fipe_codigo }}</mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item>Preço Médio: {{ dataResultado.preco }}</mat-list-item>
+  </mat-list>
+
+  <p></p>
+  <div class="btn-back2">
+    <button mat-button (click)="tela = 2">Voltar</button>
+  </div>
+</div>
