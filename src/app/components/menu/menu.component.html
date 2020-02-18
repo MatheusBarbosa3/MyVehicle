@@ -1,21 +1,19 @@
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #drawer class="sidenav" fixedInViewport 
-  [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-  [mode]="(isHandset$ | async) ? 'over' : 'side'" 
-  [opened]="false">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="false">
 
     <mat-toolbar>Menu</mat-toolbar>
 
     <mat-nav-list>
-      <a mat-list-item href="#" (click)="drawer.toggle()">
+      <a mat-list-item routerLink="/home" (click)="drawer.toggle()">
         <mat-icon>home</mat-icon>Início
       </a>
 
-      <a mat-list-item routerLink="/marcas" (click)="drawer.toggle()">
+      <a mat-list-item routerLink="/tipos-veiculo" (click)="drawer.toggle()">
         <mat-icon>search</mat-icon>Buscar marcas
       </a>
 
-      <a mat-list-item href="#" (click)="drawer.toggle()">
+      <a mat-list-item href="closing..." (click)="drawer.toggle()">
         <mat-icon>close</mat-icon>Fechar
       </a>
     </mat-nav-list>

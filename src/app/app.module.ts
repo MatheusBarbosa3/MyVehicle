@@ -7,8 +7,9 @@ import { HttpClientModule } from "@angular/common/http";
 import { FormsModule } from '@angular/forms';
 
 import { MenuComponent } from "./components/menu/menu.component";
-import { MarcasComponent } from "./components/marcas/marcas.component";
 import { MarcaService } from "./services/marca.service";
+import { TiposVeiculoComponent } from './components/tipos-veiculo/tipos-veiculo.component';
+import { HomeComponent } from './components/home/home.component';
 
 import { LayoutModule } from "@angular/cdk/layout";
 import {
@@ -24,10 +25,14 @@ import {
   MatDividerModule
 } from "@angular/material";
 
-
-
 @NgModule({
-  declarations: [AppComponent, MenuComponent, MarcasComponent],
+  declarations: [
+    AppComponent,
+    MenuComponent,
+    TiposVeiculoComponent,
+    HomeComponent
+  ],
+
   imports: [
     BrowserModule,
     AppRoutingModule,

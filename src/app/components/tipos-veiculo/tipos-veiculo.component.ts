@@ -4,11 +4,11 @@ import { Resultado } from "../../models/resultado"
 import { MarcaService } from "../../services/marca.service";
 
 @Component({
-  selector: "app-marcas",
-  templateUrl: "./marcas.component.html",
-  styleUrls: ["./marcas.component.scss"]
+  selector: 'app-tipos-veiculo',
+  templateUrl: './tipos-veiculo.component.html',
+  styleUrls: ['./tipos-veiculo.component.scss']
 })
-export class MarcasComponent implements OnInit {
+export class TiposVeiculoComponent implements OnInit {
 
   displayedColumns: string[] = ["name", "fipe_name", "order", "key", "id"];
   dataSourceMarcas: Marcas[] = [];
