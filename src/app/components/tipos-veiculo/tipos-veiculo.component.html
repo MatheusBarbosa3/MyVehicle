@@ -1,67 +1,69 @@
-<div class="row" [hidden]="tela != 1">
-    <div class="escolha">
-        <h4>Escolha abaixo o tipo de veículo</h4>
-    </div>
-
-    <div class="row">
-        <div class="col-lg-4">
-            <mat-card class="example-card">
-                <mat-card-header>
-                    <mat-card-title>Carros</mat-card-title>
-                    <mat-card-subtitle>Conversíveis, Picapes, SUVs...</mat-card-subtitle>
-                </mat-card-header>
-                <img mat-card-image style="height: 200px;" src="../../assets/carros.jpg" />
-                <mat-card-content>
-                    <p>
-                        Conhecer as características de cada uma 
-                        dessas categorias pode fazer toda a diferença 
-                        na compra, principalmente se for o seu primeiro carro!
-                    </p>
-                </mat-card-content>
-                <mat-card-actions>
-                    <button mat-button (click)="setTipoveiculo(1)">Selecionar</button>
-                </mat-card-actions>
-            </mat-card>
+<div class="container">
+    <div class="row" [hidden]="tela != 1">
+        <div class="escolha">
+            <h4>Escolha abaixo o tipo de veículo</h4>
         </div>
 
-        <div class="col-lg-4">
-            <mat-card class="example-card">
-                <mat-card-header>
-                    <mat-card-title>Motocicletas</mat-card-title>
-                    <mat-card-subtitle>Esportivas, Streets, Off-Road...</mat-card-subtitle>
-                </mat-card-header>
-                <img mat-card-image style="height: 200px;" src="../../assets/motos.jpg" />
-                <mat-card-content>
-                    <p>
-                        Geralmente menos conhecidas, as categorias 
-                        agrupam melhor os modelos de motos do que 
-                        cilindradas – uma forma bastante habitual de se fazer isso.
-                    </p>
-                </mat-card-content>
-                <mat-card-actions>
-                    <button mat-button (click)="setTipoveiculo(2)">Selecionar</button>
-                </mat-card-actions>
-            </mat-card>
-        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <mat-card class="example-card">
+                    <mat-card-header>
+                        <mat-card-title>Carros</mat-card-title>
+                        <mat-card-subtitle>Conversíveis, Picapes, SUVs...</mat-card-subtitle>
+                    </mat-card-header>
+                    <img mat-card-image style="height: 200px;" src="../../assets/carros.jpg" />
+                    <mat-card-content>
+                        <p>
+                            Conhecer as características de cada uma
+                            dessas categorias pode fazer toda a diferença
+                            na compra, principalmente se for o seu primeiro carro!
+                        </p>
+                    </mat-card-content>
+                    <mat-card-actions>
+                        <button mat-button (click)="setTipoveiculo(1)">Selecionar</button>
+                    </mat-card-actions>
+                </mat-card>
+            </div>
 
-        <div class="col-lg-4">
-            <mat-card class="example-card">
-                <mat-card-header>
-                    <mat-card-title>Caminhões</mat-card-title>
-                    <mat-card-subtitle>Trucks, Bitrens, VUCs...</mat-card-subtitle>
-                </mat-card-header>
-                <img mat-card-image style="height: 200px;" src="../../assets/caminhoes.jpg" />
-                <mat-card-content>
-                    <p>
-                        Atualmente existem diversos tipos de caminhões 
-                        disponíveis no mercado e cada um deles é indicado
-                        para determinado trajeto ou carga.
-                    </p>
-                </mat-card-content>
-                <mat-card-actions>
-                    <button mat-button (click)="setTipoveiculo(3)">Selecionar</button>
-                </mat-card-actions>
-            </mat-card>
+            <div class="col-lg-4">
+                <mat-card class="example-card">
+                    <mat-card-header>
+                        <mat-card-title>Motocicletas</mat-card-title>
+                        <mat-card-subtitle>Esportivas, Streets, Off-Road...</mat-card-subtitle>
+                    </mat-card-header>
+                    <img mat-card-image style="height: 200px;" src="../../assets/motos.jpg" />
+                    <mat-card-content>
+                        <p>
+                            Geralmente menos conhecidas, as categorias
+                            agrupam melhor os modelos de motos do que
+                            cilindradas – uma forma bastante habitual de se fazer isso.
+                        </p>
+                    </mat-card-content>
+                    <mat-card-actions>
+                        <button mat-button (click)="setTipoveiculo(2)">Selecionar</button>
+                    </mat-card-actions>
+                </mat-card>
+            </div>
+
+            <div class="col-lg-4">
+                <mat-card class="example-card">
+                    <mat-card-header>
+                        <mat-card-title>Caminhões</mat-card-title>
+                        <mat-card-subtitle>Trucks, Bitrens, VUCs...</mat-card-subtitle>
+                    </mat-card-header>
+                    <img mat-card-image style="height: 200px;" src="../../assets/caminhoes.jpg" />
+                    <mat-card-content>
+                        <p>
+                            Atualmente existem diversos tipos de caminhões
+                            disponíveis no mercado e cada um deles é indicado
+                            para determinado trajeto ou carga.
+                        </p>
+                    </mat-card-content>
+                    <mat-card-actions>
+                        <button mat-button (click)="setTipoveiculo(3)">Selecionar</button>
+                    </mat-card-actions>
+                </mat-card>
+            </div>
         </div>
     </div>
 </div>
