@@ -3,6 +3,12 @@
   margin: 0 auto;
   margin-top: 20px;
   margin-bottom: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+}
+
+.example-card:hover {
+  box-shadow: 0 8px 16px 0 rgba(255, 255, 255, 0.342);
 }
 
 .search-form {
@@ -14,13 +20,9 @@
   width: 400px;
 }
 
-.mat-label {
-  color: white !important;
-}
-
 .escolha {
   margin: 0 auto;
-  margin-top: 10px;
+  margin-top: 50px;
 }
 
 .btn-voltar {
@@ -31,7 +33,35 @@
 .row {
   margin: 0 auto;
 }
+
 .btn-back2 {
   margin: 0 auto;
 }
 
+.select-itens {
+  margin: 0 auto;
+}
+
+mat-label {
+  color: white !important;
+}
+
+mat-form-field {
+  margin-top: 30px;
+  width: 400px;
+  height: 100px;
+}
+
+@media screen and (max-width: 500px) {
+  mat-form-field {
+    width: 350px;
+    height: 80px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  mat-form-field {
+    width: 250px;
+    height: 60px;
+  }
+}

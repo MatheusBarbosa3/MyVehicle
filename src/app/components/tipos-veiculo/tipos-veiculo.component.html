@@ -69,6 +69,10 @@
 </div>
 
 <div [hidden]="tela != 2" class="container text-center my-5">
+    <div class="select-itens">
+        <h5>Selecione os itens abaixo</h5>
+    </div>
+
     <mat-form-field>
         <mat-label>Marca: </mat-label>
         <select matNativeControl [(ngModel)]="selectedMarca" name="marca" (change)="listarTodoVeiculos()">
