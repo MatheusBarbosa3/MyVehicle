@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { Marcas } from "../../models/marcas";
 import { Resultado } from "../../models/resultado"
 import { MarcaService } from "../../services/marca.service";
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-tipos-veiculo',
@@ -18,6 +19,8 @@ export class TiposVeiculoComponent implements OnInit {
   selectedVeiculo: number;
   selectedModelo: number;
   dataSourceResultado: Resultado;
+  value = null;
+  dropdown: any;
 
   constructor(private marcaService: MarcaService) { }
 
@@ -78,8 +81,17 @@ export class TiposVeiculoComponent implements OnInit {
     );
   }
 
-  setTipoveiculo(tipoIndex: number) {
+  setTipoVeiculo(tipoIndex: number) {
     this.listarTodasMarcas(tipoIndex);
     this.tela = 2;
+  }
+
+  clearButton() {
+    var select = document.getElementsByName('marca').length = null;
+    this.dropdown.value = undefined;
+  }
+
+  pesquisarButton(){
+    
   }
 }
