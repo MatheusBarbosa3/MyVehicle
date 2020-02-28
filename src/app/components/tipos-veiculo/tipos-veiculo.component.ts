@@ -19,8 +19,7 @@ export class TiposVeiculoComponent implements OnInit {
   selectedVeiculo: number;
   selectedModelo: number;
   dataSourceResultado: Resultado;
-  value = null;
-  dropdown: any;
+
 
   constructor(private marcaService: MarcaService) { }
 
@@ -34,7 +33,6 @@ export class TiposVeiculoComponent implements OnInit {
     this.marcaService.getList<Marcas>().subscribe(
       res => {
         this.dataSourceMarcas = res;
-        console.log(this.dataSourceMarcas);
       },
       err => {
         console.log(err);
@@ -47,7 +45,6 @@ export class TiposVeiculoComponent implements OnInit {
     this.marcaService.getList<any>().subscribe(
       res => {
         this.dataSourceVeiculos = res;
-        console.log(this.dataSourceVeiculos);
       },
       err => {
         console.log(err);
@@ -60,7 +57,6 @@ export class TiposVeiculoComponent implements OnInit {
     this.marcaService.getList<any>().subscribe(
       res => {
         this.dataSourceModelos = res;
-        console.log(this.dataSourceModelos);
       },
       err => {
         console.log(err);
@@ -87,11 +83,21 @@ export class TiposVeiculoComponent implements OnInit {
   }
 
   clearButton() {
-    var select = document.getElementsByName('marca').length = null;
-    this.dropdown.value = undefined;
+    this.selectedModelo = 0;
+    this.selectedVeiculo = 0;
+    this.selectedMarca = 0;
   }
 
-  pesquisarButton(){
-    
+  pesquisarButton() {
+    if (this.selectedMarca == null || this.selectedVeiculo == null || this.selectedModelo == null) {
+      Swal.fire(
+        'Good job!',
+        'You clicked the button!',
+        'success'
+      );
+    } else {
+      this.ObterResultadoTabelaFipe();
+      this.tela = 3;
+    }
   }
 }

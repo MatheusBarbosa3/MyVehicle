@@ -76,7 +76,7 @@
     <mat-form-field>
         <mat-label>Marca: </mat-label>
         <select matNativeControl [(ngModel)]="selectedMarca" name="marca" (change)="listarTodoVeiculos()">
-            <option value="" selected></option>
+            <option value="0" selected></option>
             <option *ngFor="let marca of dataSourceMarcas" [value]="marca.id">
                 {{ marca.name }}
             </option>
@@ -87,7 +87,7 @@
     <mat-form-field>
         <mat-label>Modelo: </mat-label>
         <select matNativeControl [(ngModel)]="selectedVeiculo" name="veiculo" (change)="listarTodoModelos()">
-            <option value="" selected></option>
+            <option value="0" selected></option>
             <option *ngFor="let veiculo of dataSourceVeiculos" [value]="veiculo.id">
                 {{ veiculo.name }}
             </option>
@@ -98,7 +98,7 @@
     <mat-form-field>
         <mat-label>Ano do Modelo: </mat-label>
         <select matNativeControl [(ngModel)]="selectedModelo" name="modelo">
-            <option value="" selected></option>
+            <option value="0" selected></option>
             <option *ngFor="let modelo of dataSourceModelos" [value]="modelo.id">
                 {{ modelo.name }}
             </option>
@@ -108,7 +108,7 @@
     <p></p>
     <button mat-button class="btn-voltar" (click)="tela = 1">Voltar</button>
     <button mat-button class="btn-limpar" (click)="clearButton()">Limpar</button>
-    <button mat-button class="btn-pesquisar" (click)="ObterResultadoTabelaFipe()" (click)="tela = 3">
+    <button mat-button class="btn-pesquisar" (click)="pesquisarButton()">
         Pesquisar
     </button>
 </div>
