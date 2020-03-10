@@ -27,7 +27,6 @@ import {
   MatSelectModule,
   MatDividerModule
 } from '@angular/material';
-import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/compiler/src/core';
 
 @NgModule({
   declarations: [
@@ -59,7 +58,6 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/compiler/src/core';
     FontAwesomeModule
   ],
   providers: [HttpClientModule, MarcaService],
-  bootstrap: [AppComponent],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
