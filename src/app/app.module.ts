@@ -1,19 +1,19 @@
-import { BrowserModule } from "@angular/platform-browser";
-import { NgModule } from "@angular/core";
-import { AppRoutingModule } from "./app-routing.module";
-import { AppComponent } from "./app.component";
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { HttpClientModule } from "@angular/common/http";
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
-import { MenuComponent } from "./components/menu/menu.component";
-import { MarcaService } from "./services/marca.service";
+import { MenuComponent } from './components/menu/menu.component';
+import { MarcaService } from './services/marca.service';
 import { TiposVeiculoComponent } from './components/tipos-veiculo/tipos-veiculo.component';
 import { HomeComponent } from './components/home/home.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { NotFoundErrorComponent } from './components/not-found-error/not-found-error.component';
 
-import { LayoutModule } from "@angular/cdk/layout";
+import { LayoutModule } from '@angular/cdk/layout';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {
   MatToolbarModule,
@@ -26,7 +26,8 @@ import {
   MatSidenavModule,
   MatSelectModule,
   MatDividerModule
-} from "@angular/material";
+} from '@angular/material';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/compiler/src/core';
 
 @NgModule({
   declarations: [
@@ -58,6 +59,7 @@ import {
     FontAwesomeModule
   ],
   providers: [HttpClientModule, MarcaService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }

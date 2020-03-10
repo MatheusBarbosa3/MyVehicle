@@ -1,9 +1,9 @@
 export class Resultado {
     marca: string;
     veiculo: string;
-    ano_modelo: string;
+    anoModelo: string;
     combustivel: string;
     referencia: string;
-    fipe_codigo: string;
+    fipeCodigo: string;
     preco: string;
 }

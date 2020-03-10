@@ -76,7 +76,7 @@
     <mat-form-field>
         <mat-label>Marca: </mat-label>
         <select matNativeControl [(ngModel)]="selectedMarca" name="marca" (change)="listarTodoVeiculos()">
-            <option value="0" selected></option>
+            <option value="" selected></option>
             <option *ngFor="let marca of dataSourceMarcas" [value]="marca.id">
                 {{ marca.name }}
             </option>
@@ -87,7 +87,7 @@
     <mat-form-field>
         <mat-label>Modelo: </mat-label>
         <select matNativeControl [(ngModel)]="selectedVeiculo" name="veiculo" (change)="listarTodoModelos()">
-            <option value="0" selected></option>
+            <option value="" selected></option>
             <option *ngFor="let veiculo of dataSourceVeiculos" [value]="veiculo.id">
                 {{ veiculo.name }}
             </option>
@@ -98,7 +98,7 @@
     <mat-form-field>
         <mat-label>Ano do Modelo: </mat-label>
         <select matNativeControl [(ngModel)]="selectedModelo" name="modelo">
-            <option value="0" selected></option>
+            <option value="" selected></option>
             <option *ngFor="let modelo of dataSourceModelos" [value]="modelo.id">
                 {{ modelo.name }}
             </option>
@@ -111,6 +111,7 @@
     <button mat-button class="btn-pesquisar" (click)="pesquisarButton()">
         Pesquisar
     </button>
+
 </div>
 
 <div class="container" [hidden]="tela != 3">
@@ -119,13 +120,13 @@
         <mat-divider></mat-divider>
         <mat-list-item>Modelo: {{ dataSourceResultado.veiculo }}</mat-list-item>
         <mat-divider></mat-divider>
-        <mat-list-item>Ano do modelo: {{ dataSourceResultado.ano_modelo }}</mat-list-item>
+        <mat-list-item>Ano do modelo: {{ dataSourceResultado.anoModelo }}</mat-list-item>
         <mat-divider></mat-divider>
         <mat-list-item>Combustível: {{ dataSourceResultado.combustivel }}</mat-list-item>
         <mat-divider></mat-divider>
         <mat-list-item>Referência: {{ dataSourceResultado.referencia }}</mat-list-item>
         <mat-divider></mat-divider>
-        <mat-list-item>Código Fipe: {{ dataSourceResultado.fipe_codigo }}</mat-list-item>
+        <mat-list-item>Código Fipe: {{ dataSourceResultado.fipeCodigo }}</mat-list-item>
         <mat-divider></mat-divider>
         <mat-list-item>Preço Médio: {{ dataSourceResultado.preco }}</mat-list-item>
     </mat-list>

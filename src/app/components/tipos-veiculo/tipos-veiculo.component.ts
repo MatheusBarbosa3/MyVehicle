@@ -1,7 +1,7 @@
-import { Component, OnInit } from "@angular/core";
-import { Marcas } from "../../models/marcas";
-import { Resultado } from "../../models/resultado"
-import { MarcaService } from "../../services/marca.service";
+import { Component, OnInit } from '@angular/core';
+import { Marcas } from '../../models/marcas';
+import { Resultado } from '../../models/resultado';
+import { MarcaService } from '../../services/marca.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -19,7 +19,6 @@ export class TiposVeiculoComponent implements OnInit {
   selectedVeiculo: number;
   selectedModelo: number;
   dataSourceResultado: Resultado;
-
 
   constructor(private marcaService: MarcaService) { }
 
@@ -83,17 +82,18 @@ export class TiposVeiculoComponent implements OnInit {
   }
 
   clearButton() {
-    this.selectedModelo = 0;
-    this.selectedVeiculo = 0;
-    this.selectedMarca = 0;
+    this.selectedModelo = null;
+    this.selectedVeiculo = null;
+    this.selectedMarca = null;
   }
+
 
   pesquisarButton() {
     if (this.selectedMarca == null || this.selectedVeiculo == null || this.selectedModelo == null) {
       Swal.fire(
-        'Good job!',
-        'You clicked the button!',
-        'success'
+        'Oops!',
+        'Você esqueceu de marcar algum campo...',
+        'warning'
       );
     } else {
       this.ObterResultadoTabelaFipe();
